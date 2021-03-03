@@ -30,35 +30,6 @@ background-size: cover;
    font-size: 20px;
 }
 
-#button {
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  text-decoration: none;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-#button:after {
-  content: "";
-  background: #90EE90;
-  display: block;
-  position: absolute;
-  padding-top: 300%;
-  padding-left: 350%;
-  margin-left: -20px!important;
-  margin-top: -120%;
-  opacity: 0;
-  transition: all 0.8s
-}
-
-
-#button:active:after {
-  padding: 0;
-  margin: 0;
-  opacity: 1;
-  transition: 0s
-}
-
 #img1{
 margin:20px;
 }
@@ -72,7 +43,7 @@ margin:20px;
  padding:10px;
 }
 
-#aud1{
+#audio{
  opacity:0.5;
  float : right;
  margin right: 20px;
@@ -118,10 +89,10 @@ margin:20px;
 लोग मुझे गलत समझते है। </center> </h6>
 <h6 id="p1"> <center> मुस्कुराना आदत है हमारी , वरना जिंदगी तो हमसे भी नाराज हैं।  </center> </h6>
 
-<audio id="aud1" controls autoplay>
+<audio id="audio" controls autoplay>
   <source src="zara_sa.mp3" type="audio/mpeg">
 </audio>
-
+<button onclick="pauseAudio()" type="button">Pause Audio</button> 
 <img class="mgl" src="play.png"  width="80" height="80">
 
 <br> <br> 
