@@ -49,6 +49,79 @@ margin:20px;
  margin-right: -20px;
  display:null;
 }
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    }
+    html,body{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    place-items: center;
+    background: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+    }
+    
+    .wrapper .button{
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    float: left;
+    margin: 5px;
+    overflow:hidden;
+    background: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-out;
+    }
+    
+    .wrapper .button h6{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 60px;
+    margin-top:-65px;
+    margin-left: 70px;
+    transition: all 0.3s ease-out;
+    }
+    
+    .wrapper .button:hover{
+    width: 200px;
+    }
+    
+    .wrapper .button .icon{
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    border-radius: 50px;
+    box-sizing: border-box;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+    }
+
+    .wrapper .button .icon .i{
+    font-size: 25px;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+    }
+    .wrapper .button:hover .icon .i{
+    color: #fff;
+    }
+    .wrapper .button:nth-child(1) h6{
+    color: #E1306C;
+    }
+    .wrapper .button:nth-child(2) h6{
+    color: #1DA1F2;
+    }
+    .wrapper .button:nth-child(3) h6{
+    color: #4267B2;
+    }
+    .wrapper .button:nth-child(4) h6{
+    color: #1DA1F2;
+    }
 
 
     </style>
@@ -70,13 +143,31 @@ margin:20px;
     <br> <br>
     <h2 style="color:white"> <center> Welcome to hellodeepakji </center> </h2>
     <br>
-   <center> <div> 
-     <a href="https://www.instagram.com/hellodeepakji/">  <img id="button" src="insta.png"  width="80" height="80" > </a>
-     <a href="https://www.facebook.com/profile.php?id=100035800776971">    <img id="button" src="face.png"  width="80" height="80" >  </a>
-      <a href="https://in.linkedin.com/in/helodeepakji">  <img id="button" src="link.png"  width="80" height="80"> </a>
-       <a href="https://twitter.com/helodeepakji">   <img id="button" src="twitter.png"  width="80" height="80" > </a>
-    </div>
-    </center>
+   <div class="wrapper">
+<div class="button">
+        <div class="icon">
+<img class="i" src="insta.png" width="60px" height="60px" ></div>
+<h6>Instragram</h6>
+      </div>
+
+<div class="button">
+        <div class="icon">
+<img class="i" src="twitter.png" width="60px" height="60px" ></div>
+<h6>Twitter</h6>
+      </div>
+
+<div class="button">
+        <div class="icon">
+<img class="i" src="face.png" width="60px" height="60px" ></div>
+<h6>Facebook</h6>
+      </div>
+      <div class="button">
+        <div class="icon">
+<img class="i" src="link.png" width="60px" height="60px" ></div>
+<h6>Linkdein</h6>
+      </div>
+
+    
 <br>
 <img id="img1" src="PicsArt_02-28-08.45.50-min.png" width="120" height="180">
  <h3 id="im1" style="color:white"> <center> hii. मेरा नाम दीपक है। <br> मेरा कोई दुश्मन नही, <br> 
@@ -95,7 +186,7 @@ margin:20px;
 
 <audio id="audio" src="zara_sa.mp3" ></audio>
 <br> <br> 
-<marquee> <h5 style="color:white"> ©copywrite by hellodeepak 2021 </h5> </marquee>
+<marquee> <h5 id="pa2" style="color:white"> ©copywrite by hellodeepak 2021 </h5> </marquee>
 
 
 
