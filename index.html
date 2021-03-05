@@ -134,114 +134,111 @@ a:hover{
     .wrapper .button:nth-child(4) h6{
     color: black;
     }
-.circular{
-  height: 100px;
-  width: 100px;
-  position: relative;
-}
-.circular .inner, .circular .outer, .circular .circle{
-  position: absolute;
-  z-index: 6;
-  height: 100%;
-  width: 100%;
-  border-radius: 100%;
-  box-shadow: inset 0 1px 0 rgba(0,0,0,0.2);
-}
-.circular .inner{
-  top: 50%;
-  left: 50%;
-  height: 80px;
-  width: 80px;
-  margin: -40px 0 0 -40px;
-  background-color: #dde6f0;
-  border-radius: 100%;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.2);
-}
-.circular .circle{
-  z-index: 1;
-  box-shadow: none;
-}
-.circular .numb{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  font-size: 18px;
-  font-weight: 500;
-  color: #4158d0;
-}
-.circular .bar{
-  position: absolute;
-  height: 100%;
+
+.card{
+  max-width: 350px;
   width: 100%;
   background: #fff;
-  -webkit-border-radius: 100%;
-  clip: rect(0px, 100px, 100px, 50px);
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid #d9d9d9;
 }
-.circle .bar .progress{
+.card .header{
+  display: flex;
+  align-items: center;
+}
+.header .img{
+  height: 75px;
+  width: 75px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+.header .details{
+  margin-left: 20px;
+}
+.details span{
+  display: block;
+  background: #d9d9d9;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.details .name{
+  height: 15px;
+  width: 100px;
+}
+.details .about{
+  height: 13px;
+  width: 150px;
+  margin-top: 10px;
+}
+.card .description{
+  margin: 25px 0;
+}
+.description .line{
+  background: #d9d9d9;
+  border-radius: 10px;
+  height: 13px;
+  margin: 10px 0;
+  overflow: hidden;
+  position: relative;
+}
+.description .line-1{
+  width: calc(100% - 15%);
+}
+.description .line-3{
+  width: calc(100% - 40%);
+}
+.card .btns{
+  display: flex;
+}
+.card .btns .btn{
+  height: 45px;
+  width: 100%;
+  background: #d9d9d9;
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+}
+.btns .btn-1{
+  margin-right: 8px;
+}
+.btns .btn-2{
+  margin-left: 8px;
+}
+.header .img::before,
+.details span::before,
+.description .line::before,
+.btns .btn::before{
   position: absolute;
+  content: "";
   height: 100%;
   width: 100%;
-  -webkit-border-radius: 100%;
-  clip: rect(0px, 50px, 100px, 0px);
+  background-image: linear-gradient(to right, #d9d9d9 0%, rgba(0,0,0,0.05) 20%, #d9d9d9 40%, #d9d9d9 100%);
+  background-repeat: no-repeat;
+  background-size: 450px 400px;
+  animation: shimmer 1s linear infinite;
 }
-.circle .bar .progress, .dot span{
-  background: #4158d0;
+.header .img::before{
+  background-size: 650px 600px;
 }
-.circle .left .progress{
-  z-index: 1;
-  animation: left 4s linear both;
+.details span::before{
+  animation-delay: 0.2s;
 }
-@keyframes left {
+.btns .btn-2::before{
+  animation-delay: 0.22s;
+}
+@keyframes shimmer {
+  0%{
+    background-position: -450px 0;
+  }
   100%{
-    transform: rotate(180deg);
+    background-position: 450px 0;
   }
 }
-.circle .right{
-  z-index: 3;
-  transform: rotate(180deg);
-}
-.circle .right .progress{
-  animation: right 4s linear both;
-  animation-delay: 4s;
-}
-@keyframes right {
-  100%{
-    transform: rotate(180deg);
-  }
-}
-.circle .dot{
-  z-index: 2;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 50%;
-  height: 10px;
-  margin-top: -5px;
-  animation: dot 8s linear both;
-  transform-origin: 0% 50%;
-}
-.circle .dot span {
-  position: absolute;
-  right: 0;
-  width: 10px;
-  height: 10px;
-  border-radius: 100%;
-}
-@keyframes dot{
-  0% {
-    transform: rotate(-90deg);
-  }
-  50% {
-    transform: rotate(90deg);
-    z-index: 4;
-  }
-  100% {
-    transform: rotate(270deg);
-    z-index: 4;
-  }
-}
+
 
     </style>
     
@@ -302,27 +299,25 @@ a:hover{
    </div>
  <br>
 
-    <div class="circular">
-      <div class="inner">
-</div>
-<div class="outer">
-</div>
-<div class="numb">
-0%</div>
-<div class="circle">
-        <div class="dot">
-          <span></span>
-        </div>
-<div class="bar left">
-          <div class="progress">
-</div>
-</div>
-<div class="bar right">
-          <div class="progress">
-</div>
-</div>
-</div>
-</div>
+    
+  <div class="card">
+    <div class="header">
+      <div class="img"></div>
+      <div class="details">
+        <span class="name"></span>
+        <span class="about"></span>
+      </div>
+    </div>
+    <div class="description">
+      <div class="line line-1"></div>
+      <div class="line line-2"></div>
+      <div class="line line-3"></div>
+    </div>
+    <div class="btns">
+      <div class="btn btn-1"></div>
+      <div class="btn btn-2"></div>
+    </div>
+  </div>
 
 <img id="img1" src="PicsArt_02-28-08.45.50-min.png" width="120" height="180">
  <h3 id="im1" style="color:#848484"> <center> hii. मेरा नाम दीपक है। <br> मेरा कोई दुश्मन नही, <br> 
