@@ -226,25 +226,16 @@ a:hover{
 
 
 <script>
-  function play(){
-       var audio = document.getElementById("audio");
-       audio.play();
-                 }
-     function pause(){
-      var audio = document.getElementById("audio");
-        audio.pause();
-                 }
-
-const numb = document.querySelector(".numb");
-      let counter = 0;
-      setInterval(()=>{
-        if(counter == 100){
-          clearInterval();
-        }else{
-          counter+=1;
-          numb.textContent = counter + "%";
-        }
-      }, 80);
+  
+    function play(){
+      var image = document.getElementById('mgl');
+      if(image.src.match("play")){
+      audio.play();
+      image.src = "circled-pause.png" ;
+     }else{
+      audio.pause();
+     image.src = "play.png" ;
+  }
 
    </script>
 
