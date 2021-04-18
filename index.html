@@ -213,28 +213,34 @@ a:hover{
 <h6 id="p1"> <center> मुस्कुराना आदत है हमारी , वरना जिंदगी तो हमसे भी नाराज हैं।  </center> </h6>
 
 <center>
-<div>
-    <img class="mgl" src="play.png" onclick="play()" width="80" height="80">
+<div id="music"> 
+ 
+
+    <img src="play.png" onclick="play()" id="mgl" width="60px" alt="">
+   
 </div>
 </center>
 
-<audio id="audio" src="zara_sa.mp3" ></audio>
+<audio id="audio" src="love.mp3" ></audio>
 <br> <br> 
 <marquee> <h5 id="pa2" > ©copywrite by hellodeepak 2021 </h5> </marquee>
 
 
 
 <script>
-  
+ 
     function play(){
-      var image = document.getElementById('mgl');
-      if(image.src.match("play")){
-      audio.play();
-      image.src = "circled-pause.png" ;
-     }else{
-      audio.pause();
-     image.src = "play.png" ;
-  }
+        var image = document.getElementById('mgl');
+        if (image.src.match("play")) {
+            audio.play(); 
+         image.src = "pause.png" ;
+       }else{
+           audio.pause();
+           image.src="play.png";
+       }
+    
+    }             
+
 
    </script>
 
