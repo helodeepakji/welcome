@@ -16,7 +16,7 @@
             box-sizing: border-box;
         }
 
-        .container {
+        .contra {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -95,11 +95,11 @@
             width: 100%;
         }
 
-        .social-container {
+        .social-contra {
             margin: 20px 0;
         }
 
-        .social-container a {
+        .social-contra a {
             border: 1px solid #dddddd;
             border-radius: 50%;
             display: inline-flex;
@@ -110,7 +110,7 @@
             width: 40px;
         }
 
-        .container {
+        .contra {
             background-color: #ffffff;
             border-radius: 10px;
             box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -121,31 +121,31 @@
             min-height: 480px;
         }
 
-        .form-container {
+        .form-contra {
             position: absolute;
             top: 0;
             height: 100%;
             transition: all 0.6s ease-in-out;
         }
 
-        .sign-in-container {
+        .sign-in-contra {
             left: 0;
             width: 50%;
             z-index: 2;
         }
 
-        .sign-up-container {
+        .sign-up-contra {
             left: 0;
             width: 50%;
             opacity: 0;
             z-index: 1;
         }
 
-        .container.right-panel-active .sign-in-container {
+        .contra.right-panel-active .sign-in-contra {
             transform: translateX(100%);
         }
 
-        .container.right-panel-active .sign-up-container {
+        .contra.right-panel-active .sign-up-contra {
             transform: translateX(100%);
             opacity: 1;
             z-index: 5;
@@ -167,7 +167,7 @@
             }
         }
 
-        .overlay-container {
+        .overlay-contra {
             position: absolute;
             top: 0;
             left: 50%;
@@ -178,7 +178,7 @@
             z-index: 100;
         }
 
-        .overlay-container {
+        .overlay-contra {
             position: absolute;
             top: 0;
             left: 50%;
@@ -189,7 +189,7 @@
             z-index: 100;
         }
 
-        .container.right-panel-active .overlay-container {
+        .contra.right-panel-active .overlay-contra {
             transform: translateX(-100%);
         }
 
@@ -213,7 +213,7 @@
             transition: transform 0.6s ease-in-out;
         }
 
-        .container.right-panel-active .overlay {
+        .contra.right-panel-active .overlay {
             transform: translateX(50%);
         }
 
@@ -236,7 +236,7 @@
             transform: translateX(-20%);
         }
 
-        .container.right-panel-active .overlay-left {
+        .contra.right-panel-active .overlay-left {
             transform: translateX(0);
         }
 
@@ -245,30 +245,30 @@
             transform: translateX(0);
         }
 
-        .container.right-panel-active .overlay-right {
+        .contra.right-panel-active .overlay-right {
             transform: translateX(20%);
         }
 
         @media only screen and (max-width: 650px) {
-            .overlay-container {
+            .overlay-contra {
                 display: none;
             }
 
-            .sign-in-container {
+            .sign-in-contra {
                 width: 100%;
             }
 
-            .form-container {
+            .form-contra {
                 position: relative;
             }
 
-            .sign-up-container {
+            .sign-up-contra {
                 width: 100%;
                 opacity: 1;
                 display: none;
             }
 
-            /* .container {} */
+            /* .contra {} */
 
             button.ghost {
                 background-color: #fe0000;
@@ -285,11 +285,11 @@
 
 <body>
 
-    <div class="container" id="container">
-        <div class="form-container sign-up-container" id="siup_cont">
+    <div class="contra" id="contra">
+        <div class="form-contra sign-up-contra" id="siup_cont">
             <form action="#">
                 <h1>Create Account</h1>
-                <div class="social-container">
+                <div class="social-contra">
                     <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                     <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
@@ -302,10 +302,10 @@
                 <button class="ghost" id="msignIn">Sign In</button>
             </form>
         </div>
-        <div class="form-container sign-in-container" id="siin_cont">
+        <div class="form-contra sign-in-contra" id="siin_cont">
             <form action="#">
                 <h1>Sign in</h1>
-                <div class="social-container">
+                <div class="social-contra">
                     <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                     <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
@@ -318,7 +318,7 @@
                 <button class="ghost" id="msignUp">Sign Up</button>
             </form>
         </div>
-        <div class="overlay-container">
+        <div class="overlay-contra">
             <div class="overlay">
                 <div class="overlay-panel overlay-left">
                     <h1>Welcome Back!</h1>
@@ -339,26 +339,26 @@
     const signInButton = document.getElementById('signIn');
     const msignUpButton = document.getElementById('msignUp');
     const msignInButton = document.getElementById('msignIn');
-    const container = document.getElementById('container');
-    const siupcontainer = document.getElementById('siup_cont');
-    const siincontainer = document.getElementById('siin_cont');
+    const contra = document.getElementById('contra');
+    const siupcontra = document.getElementById('siup_cont');
+    const siincontra = document.getElementById('siin_cont');
 
     signUpButton.addEventListener('click', () => {
-        container.classList.add("right-panel-active");
+        contra.classList.add("right-panel-active");
     });
 
     signInButton.addEventListener('click', () => {
-        container.classList.remove("right-panel-active");
+        contra.classList.remove("right-panel-active");
     });
 
     msignUpButton.addEventListener('click', () => {
-        siupcontainer.classList.add("display");
-        siincontainer.classList.add("hiddis");
+        siupcontra.classList.add("display");
+        siincontra.classList.add("hiddis");
     });
 
     msignInButton.addEventListener('click', () => {
-        siincontainer.classList.remove("hiddis");
-        siupcontainer.classList.remove("display");
+        siincontra.classList.remove("hiddis");
+        siupcontra.classList.remove("display");
     });
 </script>
 
