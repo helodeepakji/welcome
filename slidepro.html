@@ -1,0 +1,53 @@
+<div class="product-imgs">
+            <div class="img-display">
+                <div class="img-showcase">
+                    <img src="slide/<?php echo $slide?>1.jpg" width="700px" heigth="500px" alt=" image">
+                    <img src="slide/<?php echo $slide?>2.jpg" width="700px" heigth="500px" alt=" image">
+                    <img src="slide/<?php echo $slide?>3.jpg" width="700px" heigth="500px" alt=" image">
+                    <img src="slide/<?php echo $slide?>4.jpg" width="700px" heigth="500px" alt=" image">
+                </div>
+            </div>
+            <div class="img-select">
+                <div class="img-item">
+                    <a href="#" data-id="1">
+                        <img src="slide/<?php echo $slide?>1.jpg" width="700px" heigth="500px" alt=" image">
+                    </a>
+                </div>
+                <div class="img-item">
+                    <a href="#" data-id="2">
+                        <img src="slide/<?php echo $slide?>2.jpg" width="700px" heigth="500px" alt=" image">
+                    </a>
+                </div>
+                <div class="img-item">
+                    <a href="#" data-id="3">
+                        <img src="slide/<?php echo $slide?>3.jpg" width="700px" heigth="500px" alt=" image">
+                    </a>
+                </div>
+                <div class="img-item">
+                    <a href="#" data-id="4">
+                        <img src="slide/<?php echo $slide?>4.jpg" width="700px" heigth="500px" alt=" image">
+                    </a>
+                </div>
+            </div>
+        </div>
+<script>
+const imgs = document.querySelectorAll('.img-select a');
+const imgBtns = [...imgs];
+let imgId = 1;
+
+imgBtns.forEach((imgItem) => {
+    imgItem.addEventListener('click', (event) => {
+        event.preventDefault();
+        imgId = imgItem.dataset.id;
+        slideImage();
+    });
+});
+
+function slideImage() {
+    const displayWidth = document.querySelector('.img-showcase img:first-child').clientWidth;
+
+    document.querySelector('.img-showcase').style.transform = `translateX(${- (imgId - 1) * displayWidth}px)`;
+}
+
+window.addEventListener('resize', slideImage);
+</script>
