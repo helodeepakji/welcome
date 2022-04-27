@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous" />
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Ubuntu:wght@300&display=swap');
+
+        .cmailbox {
+            height: 700px;
+            padding: 50px;
+            font-family: 'Ubuntu', sans-serif;
+            background: linear-gradient(170deg, #9c14e6 70%, white 30%);
+        }
+
+        .cmailbox h1 {
+            text-align: center;
+            color: white;
+        }
+
+        .cmailbox .cmailpart {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .cmailbox .cmailpart input {
+            width: 50%;
+            height: 60px;
+            padding: 10px;
+        }
+
+        .cmailbox .cmailpart button {
+            background: black;
+            color: white;
+        }
+    </style>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        /** carousel **/
+        .simple-carousel {
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto 0 auto;
+            border-radius: 4px;
+            height: 430px;
+            /* Carousel Heigth [now is full screen]*/
+        }
+
+        .simple-carousel ul {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .simple-carousel ul li.slide {
+            position: absolute;
+            display: block;
+            top: 25px;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 430px;
+            background: #ccc;
+            text-align: center;
+            line-height: 300px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .simple-carousel ul li.slide.active {
+            opacity: 1;
+        }
+
+        .simple-carousel a.control_prev,
+        a.control_next {
+            position: absolute;
+            top: 25%;
+            z-index: 999;
+            display: block;
+            padding: 5em 2em;
+            color: black;
+            text-decoration: none;
+            opacity: 0.6;
+            cursor: pointer;
+        }
+
+        .simple-carousel a.control_prev:hover,
+        a.control_next:hover {
+            opacity: 1;
+            -webkit-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+        }
+
+        .simple-carousel a.control_prev {
+            left: 0;
+            border-radius: 0 2px 2px 0;
+        }
+
+        .simple-carousel a.control_next {
+            right: 0;
+            border-radius: 2px 0 0 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cmailbox">
+        <div class="cmailtext">
+            <h1>SignUp for FreeWebsite site</h1>
+            <div class="cmailpart">
+                <input type="email" id="c_email" name="c_email" placeholder="Enter Your Email"
+                    class="box_shadow email_process">
+                <span class="col-md-1" style="margin-right:0px; margin-left:0px; padding:0px; width:1px;"></span><br>
+                <button type="button" class="sign_up" onclick="ajax_data()"><b>Start The Process</b></button>
+            </div>
+        </div>
+        <div class="simple-carousel">
+            <a href="#" class="control_next"><i class="fa fa-chevron-right"></i></a>
+            <a href="#" class="control_prev"><i class="fa fa-chevron-left"></i></a>
+            <ul>
+                <li class="slide"
+                    style="background-image: url('image/site1.jpg');"></li>
+                <li class="slide"
+                    style="background-image: url('image/site2.jpg');"></li>
+                <li class="slide"
+                    style="background-image: url('image/site3.jpg');"></li>
+                <li class="slide"
+                    style="background-image: url('image/site4.jpg');"></li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function () {
+        simpleCarousel($(".simple-carousel"), 5000);
+    });
+
+    function simpleCarousel(carousel, intervalTime = 5000) {
+        var slideCount = $(carousel).find("ul li.slide").length;
+        var activeSlide = 0;
+
+        function showSlide() {
+            $(carousel)
+                .find("ul li.slide")
+                .each(function (index) {
+                    if (index == activeSlide) {
+                        $(this).fadeIn();
+                    } else {
+                        $(this).fadeOut();
+                    }
+                });
+        }
+
+        setInterval(function () {
+            moveRight();
+        }, intervalTime);
+
+        function moveLeft() {
+            activeSlide -= 1;
+            if (activeSlide < 0) {
+                activeSlide = slideCount - 1;
+            }
+            showSlide();
+        }
+
+        function moveRight() {
+            activeSlide += 1;
+            if (activeSlide >= slideCount) {
+                activeSlide = 0;
+            }
+            showSlide();
+        }
+
+        $(carousel)
+            .find("a.control_prev")
+            .click(function () {
+                moveLeft();
+            });
+
+        $(carousel)
+            .find("a.control_next")
+            .click(function () {
+                moveRight();
+            });
+    }
+
+</script>
+
+</html>
